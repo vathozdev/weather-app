@@ -8,6 +8,7 @@ async function getWeatherData(location) {
     }
     const weatherData = await response.json();
     console.log(weatherData);
+
     const city = weatherData.resolvedAddress;
     const temp = weatherData.currentConditions.temp;
     const condition = weatherData.currentConditions.conditions;
@@ -33,4 +34,9 @@ class Weather {
     this.condition = condition;
     this.humidity = humidity;
   }
+}
+
+async function searchWeather(location) {
+    const searchResult = await getWeatherData(location);
+    console.log(searchResult);
 }
