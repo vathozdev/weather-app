@@ -16,7 +16,7 @@ async function getWeatherData(location) {
     const condition = weatherData.currentConditions.conditions;
     const humidity = weatherData.currentConditions.humidity;
 
-    const currentWeather = new Weather(city, temp, condition, humidity);
+    currentWeather = new Weather(city, temp, condition, humidity);
     return currentWeather;
   } catch (error) {
     console.error("Failed to fetch user data:", error.message);
