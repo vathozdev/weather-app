@@ -58,7 +58,7 @@ function displayingWeather(weather) {
   cityName.textContent = weather.city;
 
   const tempValue = document.createElement("p");
-  tempValue.classList.add("containerparas");
+  tempValue.classList.add("temp-value");
   tempValue.textContent = weather.temp;
 
   const conditionCard = document.createElement("div");
@@ -90,17 +90,17 @@ function clearingPage() {
 }
 
 function fahrenheitToCelsius(fahrenheit) {
-    return (fahrenheit - 32) * 5 / 9;
+  return ((fahrenheit - 32) * 5) / 9;
 }
 
 const toggleBtn = document.querySelector("#toggleButton");
-  toggleBtn.addEventListener("click", () => {
-    const isFahrenheit = toggleBtn.textContent === "F";
-    if (isFahrenheit) {
-      toggleBtn.textContent = "C";
-
-    } else {
-      toggleBtn.textContent = "F";
-      fahrenheitToCelsius(fahrenheit);
-    }
-  })
+const tempValue = document.querySelector(".temp-value");
+toggleBtn.addEventListener("click", () => {
+  const isFahrenheit = toggleBtn.textContent === "F";
+  if (isFahrenheit) {
+    toggleBtn.textContent = "C";
+  } else {
+    toggleBtn.textContent = "F";
+    fahrenheitToCelsius(fahrenheit);
+  }
+});
