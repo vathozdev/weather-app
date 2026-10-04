@@ -54,7 +54,7 @@ function displayingWeather(weather) {
   const weatherDataContainer = document.createElement("div");
   weatherDataContainer.classList.add("weather-data-container");
   container.appendChild(weatherDataContainer);
-
+  console.log(weather.icon); //temp
   const cityName = document.createElement("p");
   cityName.classList.add("containerparas");
   cityName.textContent = weather.city;
