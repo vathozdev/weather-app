@@ -51,7 +51,29 @@ form.addEventListener('submit', (event) => {
 });
 
 function displayingWeather(weather) {
+  const container = document.querySelector("#container")
   const weatherDataContainer = document.createElement("div");
-  weatherDataContainer.classList.add("container-div");
+  weatherDataContainer.classList.add("weather-data-container");
+  container.appendChild(weatherDataContainer);
+
+  const cityName = document.createElement("p");
+  cityName.classList.add("containerparas");
+  cityName.textContent = weather.city
   
+  const tempValue = document.createElement("p")
+  tempValue.classList.add("containerparas");
+  tempValue.textContent = (weather.temp);
+
+  const conditionCard = document.createElement("div");
+  conditionCard.classList.add("condition-card");
+  const conditionText = document.createElement("p");
+  conditionText.classList.add("containerparas");
+  conditionText.textContent = weather.condition;
+  conditionCard.appendChild(conditionText);
+
+  const humidityValue = document.createElement("p");
+  humidityValue.classList.add("containerparas");
+  humidityValue.textContent = weather.humidity;
+
+  weatherDataContainer.append(cityName, tempValue, conditionCard, humidityValue);
 }
