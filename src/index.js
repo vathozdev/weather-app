@@ -4,7 +4,7 @@ let currentWeather;
 async function getWeatherData(location) {
   try {
     const response = await fetch(
-      `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}?unitGroup=us&key=mykey&contentType=json`,
+      `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}?unitGroup=us&key=TFFT5KWNSC82V9468BJQ2TUPF&contentType=json`,
     );
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
