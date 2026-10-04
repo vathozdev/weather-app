@@ -1,3 +1,6 @@
+let currentUnit = "F";
+let currentWeather;
+
 async function getWeatherData(location) {
   try {
     const response = await fetch(
