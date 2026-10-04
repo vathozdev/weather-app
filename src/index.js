@@ -97,11 +97,12 @@ const toggleBtn = document.querySelector("#toggleButton");
 const tempValue = document.querySelector(".temp-value");
 toggleBtn.addEventListener("click", () => {
   const isFahrenheit = toggleBtn.textContent === "F";
+  const celciusValue = fahrenheitToCelsius(currentWeather.temp);
   if (isFahrenheit) {
     toggleBtn.textContent = "C";
-    fahrenheitToCelsius(fahrenheit);
+    tempValue.textContent = celciusValue;
   } else {
     toggleBtn.textContent = "F";
-    tempValue.textContent = fahrenheit;
+    tempValue.textContent = currentWeather.temp;
   }
 });
