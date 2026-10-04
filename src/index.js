@@ -13,18 +13,11 @@ async function getWeatherData(location) {
     const condition = weatherData.currentConditions.conditions;
     const humidity = weatherData.currentConditions.humidity;
 
-    const currentWeather = new Weather(
-        city,
-        temp,
-        condition,
-        humidity
-    )    
+    const currentWeather = new Weather(city, temp, condition, humidity);
     return currentWeather;
-
   } catch (error) {
     console.error("Failed to fetch user data:", error.message);
   }
-
 }
 class Weather {
   constructor(city, temp, condition, humidity) {
@@ -36,33 +29,34 @@ class Weather {
 }
 
 async function searchWeather(location) {
-    const searchResult = await getWeatherData(location);
-    displayingWeather(searchResult);
+  const searchResult = await getWeatherData(location);
+  clearingPage();
+  displayingWeather(searchResult);
 }
 
-const form = document.querySelector('form');
-form.addEventListener('submit', (event) => {
-    event.preventDefault();
-    const locationInput = document.getElementById('location');
-    const location = locationInput.value.trim();
-    if (location) {
-        searchWeather(location);
-    }
+const form = document.querySelector("form");
+form.addEventListener("submit", (event) => {
+  event.preventDefault();
+  const locationInput = document.getElementById("location");
+  const location = locationInput.value.trim();
+  if (location) {
+    searchWeather(location);
+  }
 });
 
 function displayingWeather(weather) {
-  const container = document.querySelector("#container")
+  const container = document.querySelector("#container");
   const weatherDataContainer = document.createElement("div");
   weatherDataContainer.classList.add("weather-data-container");
   container.appendChild(weatherDataContainer);
 
   const cityName = document.createElement("p");
   cityName.classList.add("containerparas");
-  cityName.textContent = weather.city
-  
-  const tempValue = document.createElement("p")
+  cityName.textContent = weather.city;
+
+  const tempValue = document.createElement("p");
   tempValue.classList.add("containerparas");
-  tempValue.textContent = (weather.temp);
+  tempValue.textContent = weather.temp;
 
   const conditionCard = document.createElement("div");
   conditionCard.classList.add("condition-card");
@@ -75,5 +69,19 @@ function displayingWeather(weather) {
   humidityValue.classList.add("containerparas");
   humidityValue.textContent = weather.humidity;
 
-  weatherDataContainer.append(cityName, tempValue, conditionCard, humidityValue);
+  weatherDataContainer.append(
+    cityName,
+    tempValue,
+    conditionCard,
+    humidityValue,
+  );
+}
+
+function clearingPage() {
+  const weatherDataContainer = document.querySelector(
+    ".weather-data-container",
+  );
+  if (weatherDataContainer) {
+    weatherDataContainer.remove();
+  }
 }
