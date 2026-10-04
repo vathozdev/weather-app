@@ -69,7 +69,7 @@ function displayingWeather(weather) {
   conditionText.classList.add("containerparas");
   conditionText.textContent = weather.condition;
   const conditionIcon = document.createElement("img");
-  conditionIcon.src = `weather-icons/${weather.icon}.svg`
+  conditionIcon.src = `weather-icons/${weather.icon}.svg`;
   conditionCard.appendChild(conditionText);
   conditionCard.appendChild(conditionIcon);
 
