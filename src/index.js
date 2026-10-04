@@ -85,3 +85,4 @@ function clearingPage() {
     weatherDataContainer.remove();
   }
 }
+
