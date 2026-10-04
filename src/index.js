@@ -99,14 +99,13 @@ function fahrenheitToCelsius(fahrenheit) {
 }
 
 const toggleBtn = document.querySelector("#toggleButton");
-
 toggleBtn.addEventListener("click", () => {
   const tempValue = document.querySelector(".temp-value");
   const isFahrenheit = toggleBtn.textContent === "°F";
-  const celciusValue = `${fahrenheitToCelsius(currentWeather.temp)}${currentUnit}`;
   if (isFahrenheit) {
     toggleBtn.textContent = "°C";
     currentUnit = "°C";
+    const celciusValue = `${fahrenheitToCelsius(currentWeather.temp)}${currentUnit}`;
     tempValue.textContent = celciusValue;
   } else {
     toggleBtn.textContent = "°F";
