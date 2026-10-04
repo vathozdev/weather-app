@@ -99,8 +99,9 @@ toggleBtn.addEventListener("click", () => {
   const isFahrenheit = toggleBtn.textContent === "F";
   if (isFahrenheit) {
     toggleBtn.textContent = "C";
+    fahrenheitToCelsius(fahrenheit);
   } else {
     toggleBtn.textContent = "F";
-    fahrenheitToCelsius(fahrenheit);
+    tempValue.textContent = fahrenheit;
   }
 });
