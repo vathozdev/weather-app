@@ -15,19 +15,21 @@ async function getWeatherData(location) {
     const temp = weatherData.currentConditions.temp;
     const condition = weatherData.currentConditions.conditions;
     const humidity = weatherData.currentConditions.humidity;
+    const icon = weatherData.currentConditions.icon
 
-    currentWeather = new Weather(city, temp, condition, humidity);
+    currentWeather = new Weather(city, temp, condition, humidity, icon);
     return currentWeather;
   } catch (error) {
     console.error("Failed to fetch user data:", error.message);
   }
 }
 class Weather {
-  constructor(city, temp, condition, humidity) {
+  constructor(city, temp, condition, humidity, icon) {
     this.city = city;
     this.temp = temp;
     this.condition = condition;
     this.humidity = humidity;
+    this.icon = icon;
   }
 }
 
@@ -66,7 +68,10 @@ function displayingWeather(weather) {
   const conditionText = document.createElement("p");
   conditionText.classList.add("containerparas");
   conditionText.textContent = weather.condition;
+  const conditionIcon = document.createElement("img");
+  conditionIcon.src = `weather-icons/${weather.icon}.svg`
   conditionCard.appendChild(conditionText);
+  conditionCard.appendChild(conditionIcon);
 
   const humidityValue = document.createElement("p");
   humidityValue.classList.add("containerparas");
