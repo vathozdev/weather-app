@@ -1,4 +1,4 @@
-let currentUnit = "F";
+let currentUnit = "°F";
 let currentWeather;
 
 async function getWeatherData(location) {
@@ -59,7 +59,7 @@ function displayingWeather(weather) {
 
   const tempValue = document.createElement("p");
   tempValue.classList.add("temp-value");
-  tempValue.textContent = weather.temp;
+  tempValue.textContent = `${weather.temp}${currentUnit}`;
 
   const conditionCard = document.createElement("div");
   conditionCard.classList.add("condition-card");
@@ -97,13 +97,15 @@ const toggleBtn = document.querySelector("#toggleButton");
 
 toggleBtn.addEventListener("click", () => {
   const tempValue = document.querySelector(".temp-value");
-  const isFahrenheit = toggleBtn.textContent === "F";
-  const celciusValue = fahrenheitToCelsius(currentWeather.temp);
+  const isFahrenheit = toggleBtn.textContent === "°F";
+  const celciusValue = `${fahrenheitToCelsius(currentWeather.temp)}${currentUnit}`;
   if (isFahrenheit) {
-    toggleBtn.textContent = "C";
+    toggleBtn.textContent = "°C";
+    currentUnit = "°C";
     tempValue.textContent = celciusValue;
   } else {
-    toggleBtn.textContent = "F";
-    tempValue.textContent = currentWeather.temp;
+    toggleBtn.textContent = "°F";
+    currentUnit = "°F";
+    tempValue.textContent = `${currentWeather.temp}${currentUnit}`;
   }
 });
