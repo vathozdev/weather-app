@@ -90,7 +90,7 @@ function clearingPage() {
 }
 
 function fahrenheitToCelsius(fahrenheit) {
-  return ((fahrenheit - 32) * 5) / 9;
+  return Number((((fahrenheit - 32) * 5) / 9).toFixed(1));
 }
 
 const toggleBtn = document.querySelector("#toggleButton");
