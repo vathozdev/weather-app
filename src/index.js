@@ -37,7 +37,7 @@ class Weather {
 
 async function searchWeather(location) {
     const searchResult = await getWeatherData(location);
-    console.log(searchResult);
+    displayingWeather(searchResult);
 }
 
 const form = document.querySelector('form');
