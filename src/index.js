@@ -86,3 +86,18 @@ function clearingPage() {
   }
 }
 
+function fahrenheitToCelsius(fahrenheit) {
+    return (fahrenheit - 32) * 5 / 9;
+}
+
+const toggleBtn = document.querySelector("#toggleButton");
+  toggleBtn.addEventListener("click", () => {
+    const isFahrenheit = toggleBtn.textContent === "F";
+    if (isFahrenheit) {
+      toggleBtn.textContent = "C";
+
+    } else {
+      toggleBtn.textContent = "F";
+      fahrenheitToCelsius(fahrenheit);
+    }
+  })
