@@ -39,3 +39,19 @@ async function searchWeather(location) {
     const searchResult = await getWeatherData(location);
     console.log(searchResult);
 }
+
+const form = document.querySelector('form');
+form.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const locationInput = document.getElementById('location');
+    const location = locationInput.value.trim();
+    if (location) {
+        searchWeather(location);
+    }
+});
+
+function displayingWeather(weather) {
+  const weatherDataContainer = document.createElement("div");
+  weatherDataContainer.classList.add("container-div");
+  
+}
