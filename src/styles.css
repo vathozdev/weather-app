@@ -11,3 +11,15 @@ body {
     font-family: "Times New Roman", serif;
     font-size: 18px;
 }
+#container {
+    width: 500px;
+    margin: 80px auto;
+    padding: 20px;
+    background-color: #c0c0c0;
+    border: 3px outset #ffffff;
+    text-align: center;
+}
+
+form {
+    margin-top: 20px;
+}
