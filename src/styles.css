@@ -112,3 +112,8 @@ button:focus {
     border: 3px outset #ffffff;
     text-align: center;
 }
+
+#loading-box p {
+    margin: 10px 0 0;
+    font-weight: bold;
+}
