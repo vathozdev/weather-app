@@ -11,6 +11,7 @@ body {
     font-family: "Times New Roman", serif;
     font-size: 18px;
 }
+
 #container {
     width: 500px;
     margin: 80px auto;
@@ -22,4 +23,23 @@ body {
 
 form {
     margin-top: 20px;
+}
+
+input {
+    padding: 5px;
+    border: 2px inset #000000;
+    border-radius: 0;
+    font-family: "Times New Roman", serif;
+    font-size: 17px;
+}
+
+button {
+    padding: 5px 12px;
+    background-color: #c0c0c0;
+    color: #000000;
+    border: 2px outset #ffffff;
+    border-radius: 0;
+    font-family: "Times New Roman", serif;
+    font-size: 17px;
+    cursor: pointer;
 }
