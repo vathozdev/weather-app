@@ -15,7 +15,7 @@ async function getWeatherData(location) {
     const temp = weatherData.currentConditions.temp;
     const condition = weatherData.currentConditions.conditions;
     const humidity = weatherData.currentConditions.humidity;
-    const icon = weatherData.currentConditions.icon
+    const icon = weatherData.currentConditions.icon;
 
     currentWeather = new Weather(city, temp, condition, humidity, icon);
     return currentWeather;
@@ -113,3 +113,13 @@ toggleBtn.addEventListener("click", () => {
     tempValue.textContent = `${currentWeather.temp}${currentUnit}`;
   }
 });
+
+const loadingBox = document.querySelector("#loading-overlay");
+
+function showLoading() {
+  loadingBox.classList.add("active");
+}
+
+function hideLoading() {
+  loadingBox.classList.remove("active");
+}
