@@ -83,7 +83,7 @@ function displayingWeather(weather) {
 
   const humidityValue = document.createElement("p");
   humidityValue.classList.add("containerparas");
-  humidityValue.textContent = weather.humidity;
+  humidityValue.textContent = `Humidity: ${weather.humidity}%`;
 
   weatherDataContainer.append(
     cityName,
