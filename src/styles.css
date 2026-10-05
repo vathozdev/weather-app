@@ -142,7 +142,7 @@ button:focus {
   position: absolute;
   top: 15px;
   left: 15px;
-  padding: 8px 12px;
+  padding: 6px 10px;
   background-color: #c0c0c0;
   border: 3px outset #ffffff;
   color: #000080;
@@ -150,5 +150,5 @@ button:focus {
 #site-header h1 {
   margin: 0;
   font-family: "Courier New", monospace;
-  font-size: 24px;
+  font-size: 20px;
 }
