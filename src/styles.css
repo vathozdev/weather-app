@@ -97,3 +97,7 @@ button:focus {
     backdrop-filter: blur(4px);
     z-index: 9999;
 }
+
+#loading-overlay.active {
+    display: block;
+}
