@@ -117,3 +117,13 @@ button:focus {
     margin: 10px 0 0;
     font-weight: bold;
 }
+
+#spinner {
+    width: 35px;
+    height: 35px;
+    margin: 0 auto;
+    border: 5px solid #808080;
+    border-top: 5px solid #000080;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
