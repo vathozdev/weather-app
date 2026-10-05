@@ -43,3 +43,15 @@ button {
     font-size: 17px;
     cursor: pointer;
 }
+
+button:active {
+    border: 2px inset #ffffff;
+}
+
+button:focus {
+    outline: 1px dotted #000000;
+}
+
+#toggleButton {
+    margin-bottom: 10px;
+}
