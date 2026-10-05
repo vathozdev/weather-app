@@ -19,8 +19,10 @@ async function getWeatherData(location) {
 
     currentWeather = new Weather(city, temp, condition, humidity, icon);
     return currentWeather;
+
   } catch (error) {
-    console.error("Failed to fetch user data:", error.message);
+    console.error("Error fetching weather data:", error.message);
+    throw error;
   }
 }
 class Weather {
@@ -34,9 +36,16 @@ class Weather {
 }
 
 async function searchWeather(location) {
-  const searchResult = await getWeatherData(location);
-  clearingPage();
-  displayingWeather(searchResult);
+  showLoading();
+  try {
+    const searchResult = await getWeatherData(location);
+    clearingPage();
+    displayingWeather(searchResult);
+  } catch (error) {
+    console.error("Error fetching weather data:", error.message);
+  } finally {
+    hideLoading();
+  }
 }
 
 const form = document.querySelector("form");
