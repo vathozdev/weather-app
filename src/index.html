@@ -1,25 +1,26 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather App</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css" />
     <script src="index.js" defer></script>
-</head>
-<body>
+  </head>
+  <body>
+    <header id="site-header"><h1>the weather page</h1></header>
     <div id="container">
-        <button id="toggleButton">°F</button>
-    <form>
-        <input type="text" id="location" placeholder="Enter location">
+      <button id="toggleButton">°F</button>
+      <form>
+        <input type="text" id="location" placeholder="Enter location" />
         <button type="submit">Search</button>
-    </form>
+      </form>
     </div>
     <div id="loading-overlay">
-    <div id="loading-box">
+      <div id="loading-box">
         <div id="spinner"></div>
         <p>Loading...</p>
+      </div>
     </div>
-</div>
-</body>
+  </body>
 </html>
