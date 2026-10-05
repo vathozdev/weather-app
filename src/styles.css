@@ -80,3 +80,8 @@ button:focus {
     background-color: #c0c0c0;
     border: 2px outset #ffffff;
 }
+
+.condition-card img {
+    width: 100px;
+    height: 100px;
+}
