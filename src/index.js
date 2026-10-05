@@ -4,7 +4,7 @@ let currentWeather;
 async function getWeatherData(location) {
   try {
     const response = await fetch(
-      `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}?unitGroup=us&key=myKEY&contentType=json`,
+      `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}?unitGroup=us&key=TFFT5KWNSC82V9468BJQ2TUPF&contentType=json`,
     );
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
@@ -63,7 +63,6 @@ function displayingWeather(weather) {
   const weatherDataContainer = document.createElement("div");
   weatherDataContainer.classList.add("weather-data-container");
   container.appendChild(weatherDataContainer);
-  console.log(weather.icon); //temp
   const cityName = document.createElement("p");
   cityName.classList.add("containerparas");
   cityName.textContent = weather.city;
